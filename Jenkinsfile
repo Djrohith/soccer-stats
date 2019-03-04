@@ -5,12 +5,12 @@ final FULL_BUILD = true
 // HOST_PROVISION -> server to run ansible based on provision/inventory.ini
 //final HOST_PROVISION = params.HOST_PROVISION
 // limit: 'app_server' injecting by hardcoded
-final HOST_PROVISION = '172.31.14.178'
+final HOST_PROVISION = '172.31.15.182'
  
 
 
 final GIT_URL = 'https://github.com/Djrohith/soccer-stats.git'
-final NEXUS_URL = '52.66.79.224:8081'
+final NEXUS_URL = '13.232.30.51:8081'
 
 stage('Build') {
     node {
