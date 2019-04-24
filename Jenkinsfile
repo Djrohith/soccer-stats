@@ -5,12 +5,12 @@ final FULL_BUILD = true
 // HOST_PROVISION -> server to run ansible based on provision/inventory.ini
 //final HOST_PROVISION = params.HOST_PROVISION
 // limit: 'app_server' injecting by hardcoded
-final HOST_PROVISION = '172.31.15.182'
+final HOST_PROVISION = '10.0.1.21'
  
 
 
 final GIT_URL = 'https://github.com/Djrohith/soccer-stats.git'
-final NEXUS_URL = '3.16.212.226:8081'
+final NEXUS_URL = '10.0.1.19:8081'
 
 stage('Build') {
     node {
@@ -85,8 +85,8 @@ if(FULL_BUILD) {
             nexusArtifactUploader artifacts: [[groupId: 'soccer-versions', 
                                                artifactId: 'soccer-stats', classifier: '',
                                                file: 'target/soccer-stats-0.0.2-${BUILD_NUMBER}.war', type: 'war']],
-                credentialsId: '1b64c674-5bb9-476e-8680-43cc2782a795', 
-                groupId: 'br.com.meetup.ansible', nexusUrl: "${NEXUS_URL}", nexusVersion: 'nexus3', 
+                credentialsId: 'a75e53f8-48ab-4c25-84b2-dfcb7981148b', 
+                groupId: 'br.com.meetup.ansiblea75e53f8-48ab-4c25-84b2-dfcb7981148b', nexusUrl: "${NEXUS_URL}", nexusVersion: 'nexus3', 
                 protocol: 'http', repository: 'demoapp-rele', version: '0.0.2-${BUILD_NUMBER}'
 
              
